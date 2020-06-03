@@ -23,8 +23,9 @@ const Card = ({
     <div
       className={classnames("card-container", className, theme, { noPadding })}
     >
-      {course.name}
+      <div className="card-info">{course.name}</div>
     </div>
+    <div className="card-title">{course.name}</div>
   </div>
 );
 

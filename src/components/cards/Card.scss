@@ -1,33 +1,84 @@
 @import "../../styles/_mixins.scss";
 @import "../../styles/_colors.scss";
 
-#card {
-  width: 100%;
-  margin: 8px 0;
+.cards {
+  display: flex;
+  flex-wrap: wrap;
 
-  &.noMargin {
-    margin: auto;
-  }
-
-  .card-container {
-    width: 200px;
-    height: 180px;
-    display: flex;
+  #card {
+    margin: 12px 8px;
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 10px 0px;
-    border-radius: 4px;
-    padding: 8px;
 
-    &.white {
-      background-color: $white;
+    &.noMargin {
+      margin: auto;
     }
 
-    &.dark {
-      background-color: $cinder;
+    .card-container {
+      width: 200px;
+      height: 180px;
+      display: flex;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 10px 0px;
+      border-radius: 4px;
+      padding: 8px;
+
+      &.white {
+        background-color: $white;
+      }
+
+      &.dark {
+        background-color: $cinder;
+      }
+
+      &.noPadding {
+        padding: 0;
+      }
+
+      &:hover,
+      &:focus {
+        clip-path: circle(75%);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 12px 12px 0px;
+        background: #ffffff;
+      }
+
+      .card-info {
+        color: $cinder;
+        position: relative;
+        overflow: hidden;
+        font-size: 12px;
+        content: "";
+        width: 100%;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card-info:after {
+        opacity: 0;
+        width: 0;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: ease-in-out 0.5s;
+        content: "Description";
+        background-color: $manatee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .card-info:hover:after {
+        opacity: 1;
+        width: 100%;
+        transition: ease-in-out 0.5s;
+        color: white;
+      }
     }
 
-    &.noPadding {
-      padding: 0;
+    .card-title {
+      width: 200px;
+      margin-top: 4px;
+      color: $cinder;
     }
   }
 }

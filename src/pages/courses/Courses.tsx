@@ -11,6 +11,27 @@ const courses = [
   },
   {
     name: "Kazakh"
+  },
+  {
+    name: "Kazakh"
+  },
+  {
+    name: "Kazakh"
+  },
+  {
+    name: "Kazakh"
+  },
+  {
+    name: "Kazakh"
+  },
+  {
+    name: "Kazakh"
+  },
+  {
+    name: "Kazakh"
+  },
+  {
+    name: "Kazakh"
   }
 ];
 
@@ -28,7 +49,7 @@ class Courses extends React.Component<any, any> {
 
   render() {
     return (
-      <div>
+      <div className="content-container">
         Courses Page
         <br />
         <br />
