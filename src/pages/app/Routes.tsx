@@ -10,12 +10,15 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Welcome from "../welcome/Welcome";
 import Courses from "../courses/Courses";
 
+import { Header } from "components/index";
+
 import "./App.scss";
 
 const Routes = (props: any & RouteComponentProps) => {
   return (
     <div>
       <main className="page-container page">
+        <Header />
         <Route
           render={({ location }) => {
             const { pathname } = location;

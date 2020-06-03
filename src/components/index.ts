@@ -7,6 +7,7 @@ import OfflineWidget from "./offline-widget/OfflineWidget";
 import InputPhone from "./input/InputPhone";
 import AdditionalBudget from "./additional-budget/AdditionalBudget";
 import Cards from "./cards/index";
+import Header from "./header/Header";
 
 export {
   Button,
@@ -17,5 +18,6 @@ export {
   OfflineWidget,
   InputPhone,
   AdditionalBudget,
-  Cards
+  Cards,
+  Header
 };

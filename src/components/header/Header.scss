@@ -1,0 +1,28 @@
+@import "../../styles/_mixins.scss";
+@import "../../styles/_colors.scss";
+
+.header-container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 36px;
+  margin-right: 36px;
+
+  .header-items {
+    padding: 0 12px;
+    border-right: 2px solid $white;
+    cursor: pointer;
+    text-decoration: none;
+    color: $white;
+    transition: ease-in-out 0.6s;
+
+    &:last-of-type {
+      border-right: none;
+    }
+
+    &:hover {
+      color: $cinder;
+    }
+  }
+}
