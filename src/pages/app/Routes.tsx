@@ -8,14 +8,14 @@ import {
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import Welcome from "../welcome/Welcome";
+import Courses from "../courses/Courses";
 
-
+import "./App.scss";
 
 const Routes = (props: any & RouteComponentProps) => {
-
   return (
     <div>
-      <main>
+      <main className="page-container page">
         <Route
           render={({ location }) => {
             const { pathname } = location;
@@ -35,7 +35,11 @@ const Routes = (props: any & RouteComponentProps) => {
                       <Switch>
                         <Route
                           path="/index"
-                          render={renderProps => <Welcome {...renderProps} /> }
+                          render={renderProps => <Welcome {...renderProps} />}
+                        />
+                        <Route
+                          path="/courses"
+                          render={renderProps => <Courses {...renderProps} />}
                         />
                       </Switch>
                     )}

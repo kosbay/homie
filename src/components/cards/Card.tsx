@@ -4,25 +4,26 @@ import classnames from "classnames";
 import "./Card.scss";
 
 interface IProps {
-  children: any;
   className?: string;
   theme?: "white" | "dark";
   noMargin?: boolean;
   noPadding?: boolean;
+  course: any;
+  key: any;
 }
 
 const Card = ({
-  children,
   className = "",
   theme = "white",
   noMargin = false,
-  noPadding = false
+  noPadding = false,
+  course
 }: IProps) => (
   <div id="card" className={classnames({ noMargin })}>
     <div
       className={classnames("card-container", className, theme, { noPadding })}
     >
-      {children}
+      {course.name}
     </div>
   </div>
 );

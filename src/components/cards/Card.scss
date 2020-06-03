@@ -10,11 +10,13 @@
   }
 
   .card-container {
+    width: 200px;
+    height: 180px;
     display: flex;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 10px 0px;
-    border-radius: 14px;
-    padding: 24px;
+    border-radius: 4px;
+    padding: 8px;
 
     &.white {
       background-color: $white;

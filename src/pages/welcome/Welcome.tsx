@@ -6,16 +6,11 @@ class Welcome extends React.Component<any, any> {
   constructor(props) {
     super(props);
 
-    this.state = {
-    };
+    this.state = {};
   }
 
   render() {
-    return (
-      <div className="login-page-container page">
-        Welcome to Home works Platform
-      </div>
-    );
+    return <div>Welcome to Home works Platform</div>;
   }
 }
 
