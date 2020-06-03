@@ -1,0 +1,39 @@
+@import "reset";
+@import "mixins";
+@import "colors";
+
+#application {
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+
+  @include breakpoint(xs) {
+  }
+}
+
+.unselectable {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.block-title {
+  font-size: 16px;
+  color: $ebony-clay;
+  font-weight: 600;
+  margin-left: 24px;
+  margin-bottom: 16px;
+  text-transform: capitalize;
+}

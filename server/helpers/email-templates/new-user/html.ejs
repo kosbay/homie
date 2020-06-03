@@ -1,0 +1,27 @@
+<%- include('../_shared/header', {title: 'Welkom', page: 'new-budget', domain:
+domain }); %>
+<!-- Email Body -->
+<div class="email-body">
+    <!-- Body content -->
+  <div class="content-cell content-color">
+    <h1>Beste, <%= username %></h1>
+    <p class="text" style>Welkom bij Second Company!</p>
+    <p class="text" style="margin-bottom: 0">
+      Stel uw wachtwoord in en voltooi de registratie:
+    </p>
+    <a
+      class="budget-link"
+      href="<%= domain %>/setup-password/<%= resetHash %>"
+      >Ga naar het platform</a
+    >
+    <p class="text" style="margin-top: 20px;">U bent toegevoegd aan een nieuw budget, klik op de link om te gaan
+      <a href="<%= domain %>/budgets/<%= budgetId %>" class="budget-link">
+        <%= budgetName %>
+      </a>
+    </p>
+    <div class="login-button-container">
+      <a href="<%= domain %>" class="login-button">Login</a>
+    </div>
+  </div>
+</div>
+<%- include('../_shared/footer'); %>

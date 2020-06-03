@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "commonjs",
+    "resolveJsonModule": true,
+    "target": "es5",
+    "jsx": "react",
+    "lib": ["dom", "es2015", "es2016", "es2017"],
+    "moduleResolution": "node",
+    "keyofStringsOnly": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "components/*": ["src/components/*"],
+      "models/*": ["src/models/*"],
+      "reduxFiles/*": ["src/data/redux/*"],
+      "helpers/*": ["src/helpers/*"]
+    },
+    "typeRoots": ["node_modules/@types"],
+    "esModuleInterop": true,
+    "noImplicitReturns": true,
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": ["node_modules", "build", "ts-node-*"]
+}

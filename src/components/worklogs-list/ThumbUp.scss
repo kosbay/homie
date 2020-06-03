@@ -1,0 +1,124 @@
+@import "../../styles/_colors.scss";
+
+$spark-width: 12px;
+$spark-height: 4px;
+$item-count: 20;
+$circle-size: 40px;
+
+.icon-wrapper {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  margin-left: auto;
+
+  .icon {
+    color: $mischka;
+
+    i {
+      transform: scale(1);
+    }
+  }
+
+  &.anim .icon {
+    color: $lima;
+
+    i {
+      animation: icon-animation cubic-bezier(0.165, 0.84, 0.44, 1) 1.2s;
+    }
+  }
+
+  .thumbs_amount {
+    position: absolute;
+    left: -8px;
+    margin-right: 8px;
+    font-weight: 500;
+  }
+}
+
+@keyframes icon-animation {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@mixin on-circle($item-count, $circle-size, $item-width, $item-height) {
+  position: relative;
+  width: $circle-size;
+  height: $circle-size;
+  border-radius: 50%;
+
+  span {
+    position: absolute;
+    width: $item-width;
+    height: $item-height;
+    top: 50%;
+    left: 50%;
+    margin-top: -$item-height/2;
+    margin-left: -$item-width/2;
+  }
+
+  $angle: (360 / $item-count);
+  $inc: 0;
+  @for $i from 1 through $item-count {
+    span:nth-of-type(#{$i}) {
+      transform: rotate($inc * -1deg) translate($circle-size/2) scale(0);
+    }
+    $inc: $inc + $angle;
+  }
+}
+
+.icon-wrapper .spark {
+  @include on-circle($item-count, $circle-size, $spark-width, $spark-height);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+
+  span {
+    background: $lima;
+    border-radius: $spark-height/2;
+  }
+}
+
+.icon-wrapper.anim {
+  .spark {
+    $inc: 0;
+    $angle: 360 / $item-count;
+    @for $i from 1 through $item-count {
+      span:nth-of-type(#{$i}) {
+        animation: spark-animation-#{$i}
+          cubic-bezier(0.075, 0.82, 0.165, 1)
+          1.5s;
+      }
+      $inc: $inc + $angle;
+    }
+  }
+}
+
+$angle: (360 / $item-count);
+$inc: 0;
+@for $i from 1 through $item-count {
+  @keyframes spark-animation-#{$i} {
+    0% {
+      opacity: 1;
+      transform: rotate($inc * -1deg) translate($circle-size/2) scale(1);
+    }
+
+    80% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      transform: rotate($inc * -1deg) translate($circle-size * 1.2) scale(0);
+    }
+  }
+  $inc: $inc + $angle;
+}

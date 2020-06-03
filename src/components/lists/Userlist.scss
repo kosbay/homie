@@ -1,0 +1,138 @@
+@import "../../styles/mixins";
+@import "../../styles/colors";
+
+.userlist__container {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.user-edit-error {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.userlist__body {
+  width: 100%;
+}
+
+.userlist-table {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 14px;
+  background-color: $white;
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.1);
+  align-items: center;
+  height: auto;
+
+  @include breakpoint(xxs) {
+    display: block;
+    overflow-y: auto;
+    width: calc(100vw - 16px);
+    display: block;
+  }
+}
+
+.userlist-table-scroll {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.userlist__header {
+  border-bottom: 1px solid $mystic;
+}
+
+.userlist__cell_head {
+  color: $manatee;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.userlist__cell_add-icon {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.userlist__cell_add-icon:hover {
+  font-size: 30px;
+}
+
+.userlist__cell {
+  width: 30%;
+  text-align: left;
+  padding: 0 12px;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.userlist__cell-80 {
+  width: 80% !important;
+}
+
+.userlist__cell_last {
+  width: 100%;
+  cursor: pointer;
+}
+
+.userlist__pen-icon {
+  margin-left: 15px;
+}
+
+.userlist__cell_first {
+  padding-left: 34px;
+
+  @include breakpoint(xs) {
+    padding-left: 15px;
+  }
+}
+
+.userlist__cell_bold {
+  color: $ebony-clay;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.userlist__footer-container {
+  display: flex;
+  align-items: center;
+  color: $manatee;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 8px 0 16px 24px;
+}
+
+.userlist__footer-td {
+  display: flex;
+  align-items: center;
+}
+
+.userlist__footer-text {
+  color: $manatee;
+  font-size: 13px;
+}
+
+.userlist__input {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  border: 1px solid $ebony-clay;
+  height: 24px;
+  width: 180px;
+  border: 2px solid $mystic;
+  padding: 5px 10px;
+}
+
+.userlist__input_error {
+  border: 1px solid $shiraz;
+}
+
+.project-list-container {
+  overflow: auto;
+  margin: 10px 0;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+.project-list-container .userlist__row:hover {
+  background-color: $athens-gray;
+}

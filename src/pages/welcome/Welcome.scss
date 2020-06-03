@@ -1,0 +1,155 @@
+@import "../../styles/_mixins.scss";
+@import "../../styles/_colors.scss";
+
+.login-page-container {
+  width: 100%;
+  height: 100vh;
+  background-color: $monza;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+}
+
+.page {
+  height: 100vh;
+  overflow-y: auto;
+  position: fixed;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.page-enter {
+  transform: translate(100%, 0);
+}
+
+.page-enter-active {
+  transform: translate(0, 0);
+}
+
+.page-exit {
+  transform: translate(-100%, 0);
+}
+
+.page--prev.page-enter {
+  transform: translate(100%, 0);
+}
+
+.page--prev.page-enter-active {
+  transform: translate(0, 0);
+}
+
+.page--prev.page-exit {
+  transform: translate(100%, 0);
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  width: 336px;
+  min-height: 285px;
+
+  @include breakpoint(xxs) {
+    width: 90%;
+  }
+}
+
+.login__button {
+  border-radius: 32px;
+  width: 100%;
+  border: none;
+  height: 48px;
+  background-color: $white;
+  color: $scorpion;
+  font-size: 16px;
+  margin-top: 8px;
+  outline: 0;
+  justify-content: center;
+  padding: 12px 32px;
+  margin-top: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login__button:active {
+  position: relative;
+  top: 1px;
+  box-shadow: none;
+}
+
+.login__input:-webkit-autofill,
+.login__input:-webkit-autofill:hover,
+.login__input:-webkit-autofill:focus,
+.login__input:-webkit-autofill {
+  -webkit-text-fill-color: $white !important;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+  font-size: 16px;
+}
+
+.login__input {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: none;
+  border: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: $white;
+  width: 80%;
+
+  &::placeholder {
+    color: $white;
+  }
+}
+
+.login__form-block {
+  width: 90%;
+  border-width: 0 0 1px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.27);
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.login__icon {
+  font-size: 24px;
+  color: $white;
+  margin-right: 10px;
+}
+
+.login__link {
+  align-self: center;
+  margin-top: 20px;
+  color: $white;
+}
+
+.text-link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.login__logo {
+  align-self: center;
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.login__error {
+  align-self: center;
+  color: $white;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.restore-text {
+  color: $white;
+  font-size: 14px;
+  text-align: center;
+}

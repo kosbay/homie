@@ -1,0 +1,37 @@
+@import "../../../styles/_colors.scss";
+
+#info {
+  margin-top: 16px;
+  display: flex;
+  margin-left: 16px;
+
+  li {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+
+    span {
+      color: $manatee;
+      font-size: 11px;
+      margin-left: 6px;
+    }
+
+    div {
+      height: 5px;
+      width: 10px;
+
+      &.red {
+        background-color: $shiraz;
+      }
+
+      &.green {
+        opacity: 0.5;
+        background-color: $lima;
+      }
+
+      &.blue {
+        background-color: $ebony-clay;
+      }
+    }
+  }
+}

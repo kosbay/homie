@@ -1,0 +1,38 @@
+@import "../../../../styles/_colors.scss";
+
+#values {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid $mystic;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  width: 50px;
+
+  li {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 9px;
+    justify-content: space-between;
+
+    span {
+      width: 20px;
+      color: $manatee;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 20px;
+      text-align: right;
+      margin-right: 7px;
+
+      &.negative {
+        color: $shiraz;
+      }
+    }
+
+    div {
+      height: 1px;
+      width: 8px;
+      background-color: $mystic;
+    }
+  }
+}

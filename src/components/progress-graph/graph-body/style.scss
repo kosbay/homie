@@ -1,0 +1,19 @@
+@import "../../../styles/_colors.scss";
+
+#body {
+  display: flex;
+
+  .bars {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .rectangle {
+    height: 6px;
+    width: 6px;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    background-color: $ebony-clay;
+    margin-top: -2px;
+  }
+}

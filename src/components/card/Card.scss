@@ -1,0 +1,31 @@
+@import "../../styles/_mixins.scss";
+@import "../../styles/_colors.scss";
+
+#card {
+  width: 100%;
+  margin: 8px 0;
+
+  &.noMargin {
+    margin: auto;
+  }
+
+  .card-container {
+    display: flex;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 10px 0px;
+    border-radius: 14px;
+    padding: 24px;
+
+    &.white {
+      background-color: $white;
+    }
+
+    &.dark {
+      background-color: $cinder;
+    }
+
+    &.noPadding {
+      padding: 0;
+    }
+  }
+}
