@@ -22,7 +22,6 @@ export default {
     alias: {
       components: path.resolve(__dirname, "src/components/"),
       models: path.resolve(__dirname, "src/models/"),
-      reduxFiles: path.resolve(__dirname, "src/data/redux/"),
       helpers: path.resolve(__dirname, "src/helpers")
     }
   },

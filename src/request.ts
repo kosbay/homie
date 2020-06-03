@@ -1,22 +1,20 @@
 import axios from "axios";
 import _ from "lodash";
 
-import store from "./data/providers/store";
-
 export const API_URI = process.env.API_URI || "/api";
 
 const request = axios.create({
   baseURL: API_URI
 });
 
-request.interceptors.request.use(
-  config => {
-    config.headers.Authorization = `JWT ${store.getJWT()}`;
+// request.interceptors.request.use(
+//   config => {
+//     config.headers.Authorization = `JWT ${store.getJWT()}`;
 
-    return config;
-  },
-  error => Promise.reject(error)
-);
+//     return config;
+//   },
+//   error => Promise.reject(error)
+// );
 
 request.interceptors.response.use(
   response => {

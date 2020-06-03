@@ -13,7 +13,6 @@
     "paths": {
       "components/*": ["src/components/*"],
       "models/*": ["src/models/*"],
-      "reduxFiles/*": ["src/data/redux/*"],
       "helpers/*": ["src/helpers/*"]
     },
     "typeRoots": ["node_modules/@types"],
