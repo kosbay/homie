@@ -20,6 +20,11 @@
   transition: transform 0.5s ease-in-out;
 }
 
+.page-title {
+  font-size: 26px;
+}
+
 .content-container {
-  margin: 140px;
+  width: 90%;
+  margin: auto 0;
 }

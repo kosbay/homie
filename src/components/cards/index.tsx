@@ -22,7 +22,6 @@ class Cards extends React.Component<any, any> {
 
     return (
       <div>
-        Cards Page
         <div className="cards">
           {courses.map((course, index) => (
             <Card key={index} course={course} />

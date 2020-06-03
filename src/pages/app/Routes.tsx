@@ -5,10 +5,10 @@ import {
   withRouter,
   RouteComponentProps
 } from "react-router-dom";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import Welcome from "../welcome/Welcome";
 import Courses from "../courses/Courses";
+import Teachers from "../teachers/Teachers";
 
 import { Header } from "components/index";
 
@@ -19,39 +19,11 @@ const Routes = (props: any & RouteComponentProps) => {
     <div>
       <main className="page-container page">
         <Header />
-        <Route
-          render={({ location }) => {
-            const { pathname } = location;
-            return (
-              <TransitionGroup>
-                <CSSTransition
-                  key={pathname}
-                  classNames="page"
-                  timeout={{
-                    enter: 500,
-                    exit: 500
-                  }}
-                >
-                  <Route
-                    location={location}
-                    render={() => (
-                      <Switch>
-                        <Route
-                          path="/index"
-                          render={renderProps => <Welcome {...renderProps} />}
-                        />
-                        <Route
-                          path="/courses"
-                          render={renderProps => <Courses {...renderProps} />}
-                        />
-                      </Switch>
-                    )}
-                  />
-                </CSSTransition>
-              </TransitionGroup>
-            );
-          }}
-        />
+        <Switch>
+          <Route path="/index" component={Welcome} />
+          <Route path="/courses" component={Courses} />
+          <Route path="/teachers" component={Teachers} />
+        </Switch>
       </main>
     </div>
   );

@@ -17,21 +17,6 @@ const courses = [
   },
   {
     name: "Kazakh"
-  },
-  {
-    name: "Kazakh"
-  },
-  {
-    name: "Kazakh"
-  },
-  {
-    name: "Kazakh"
-  },
-  {
-    name: "Kazakh"
-  },
-  {
-    name: "Kazakh"
   }
 ];
 
@@ -50,7 +35,7 @@ class Courses extends React.Component<any, any> {
   render() {
     return (
       <div className="content-container">
-        Courses Page
+        <div className="page-title">Courses Page</div>
         <br />
         <br />
         <Cards courses={courses} />

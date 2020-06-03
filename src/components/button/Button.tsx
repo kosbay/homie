@@ -4,7 +4,7 @@ import ReactLoaderSpinner from "react-loader-spinner";
 import "./Button.scss";
 
 interface IProps {
-  children: any;
+  children?: any;
   className?: string;
   isLoading?: boolean;
   [x: string]: any;

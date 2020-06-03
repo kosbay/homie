@@ -1,17 +1,28 @@
 @import "../../styles/_colors.scss";
 
 #button {
-  height: 50px;
-  padding: 16px;
-  border-radius: 5px;
+  margin: 8px 0;
+  padding: 12px 20px;
+  border-radius: 4px;
   background-color: $ebony-clay;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06), 0 6px 8px 0 rgba(0, 0, 0, 0.08);
   color: $white;
-  font-size: 14px;
-  font-weight: 500;
+  font-family: inherit;
+  display: inline-block;
+  border: none;
   cursor: pointer;
 
+  &:hover,
   &:focus {
-    outline: 0;
+    clip-path: circle(75%);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 12px 12px 0px;
+    outline: none;
+    text-decoration: none;
+  }
+
+  &:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: $ebony-clay;
+    box-shadow: none !important;
   }
 }

@@ -4,6 +4,7 @@
 .cards {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 -8px;
 
   #card {
     margin: 12px 8px;
@@ -78,7 +79,7 @@
     .card-title {
       width: 200px;
       margin-top: 4px;
-      color: $cinder;
+      color: $white;
     }
   }
 }
