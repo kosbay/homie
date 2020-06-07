@@ -33,6 +33,13 @@ const Header = ({}) => (
     >
       Profile
     </NavLink>
+    <NavLink
+      activeClassName="header-active"
+      className="header-items"
+      to="/index"
+    >
+      Welcome
+    </NavLink>
   </div>
 );
 

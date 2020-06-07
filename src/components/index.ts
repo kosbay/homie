@@ -8,6 +8,8 @@ import Input from "./input/Input";
 import AdditionalBudget from "./additional-budget/AdditionalBudget";
 import Cards from "./cards/index";
 import Header from "./header/Header";
+import Draggable from "./drag-n-drop/Draggable";
+import Droppable from "./drag-n-drop/Droppable";
 
 export {
   Button,
@@ -19,5 +21,7 @@ export {
   Input,
   AdditionalBudget,
   Cards,
-  Header
+  Header,
+  Draggable,
+  Droppable
 };
