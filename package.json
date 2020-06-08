@@ -105,6 +105,7 @@
     "query-string": "^6.8.3",
     "react": "^16.9.0",
     "react-animated-modal": "^1.1.1",
+    "react-beautiful-dnd": "^13.0.0",
     "react-dom": "^16.9.0",
     "react-ga": "^2.7.0",
     "react-icons": "2.2.7",

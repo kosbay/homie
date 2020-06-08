@@ -15,12 +15,13 @@ class Draggable extends React.Component<any, any> {
     e.dataTransfer.setData("card_id", target.id);
 
     setTimeout(() => {
-      target.style.display = "none";
+      target.style.backgroundColor = "gray";
     }, 0);
   };
 
   handleDragOver = e => {
     e.stopPropagation();
+    e.style.backgroundColor = "black";
   };
 
   render() {

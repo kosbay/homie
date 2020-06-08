@@ -10,6 +10,7 @@ import Cards from "./cards/index";
 import Header from "./header/Header";
 import Draggable from "./drag-n-drop/Draggable";
 import Droppable from "./drag-n-drop/Droppable";
+import OrderingLesson from "./lessons/Ordering";
 
 export {
   Button,
@@ -23,5 +24,6 @@ export {
   Cards,
   Header,
   Draggable,
-  Droppable
+  Droppable,
+  OrderingLesson
 };
