@@ -27,6 +27,11 @@ const sentence = {
   "#": "you"
 };
 
+const sentence2 = {
+  content: "* do you do?",
+  "*": "How"
+};
+
 const getItems = count =>
   Array.from({ length: count }, (v, k) => k).map(k => ({
     id: `item-${k}`,
@@ -53,6 +58,8 @@ class Welcome extends React.Component<any, any> {
         <br />
         <br />
         <MissingWordsLesson sentence={sentence} />
+        <br />
+        <MissingWordsLesson sentence={sentence2} />
       </div>
     );
   }

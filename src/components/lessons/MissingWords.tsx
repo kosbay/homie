@@ -76,7 +76,11 @@ class MissingWords extends React.Component<any, any> {
           />
         );
       } else {
-        result = <span key={word}>{word}</span>;
+        result = (
+          <span className="sentence-word" key={word}>
+            {word}
+          </span>
+        );
       }
       return result;
     });
