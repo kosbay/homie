@@ -1,0 +1,28 @@
+@import "../../styles/_mixins.scss";
+@import "../../styles/_colors.scss";
+
+.sentence-container {
+  transition: ease-in-out 1s;
+  background-color: grey;
+  border-radius: 4px;
+  display: flex;
+  padding: 4px;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+
+  .missing-word-input {
+    width: 100px !important;
+    margin: 0 8px !important;
+    padding: 4px 4px !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    border: none !important;
+
+    &.finished {
+      background-color: lightgreen;
+      transition: ease-in-out 0.5s;
+      color: $white;
+    }
+  }
+}

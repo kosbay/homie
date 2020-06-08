@@ -21,6 +21,9 @@ interface IProps {
   parentClassName?: string;
   textArea?: boolean;
   borderNone?: boolean;
+  onKeyDown?: React.ChangeEventHandler<HTMLInputElement>;
+  readOnly?: any;
+  size?: string;
 }
 
 const Input: React.StatelessComponent<IProps> = props => {

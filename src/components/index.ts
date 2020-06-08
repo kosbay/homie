@@ -11,6 +11,7 @@ import Header from "./header/Header";
 import Draggable from "./drag-n-drop/Draggable";
 import Droppable from "./drag-n-drop/Droppable";
 import OrderingLesson from "./lessons/Ordering";
+import MissingWordsLesson from "./lessons/MissingWords";
 
 export {
   Button,
@@ -25,5 +26,6 @@ export {
   Header,
   Draggable,
   Droppable,
-  OrderingLesson
+  OrderingLesson,
+  MissingWordsLesson
 };
