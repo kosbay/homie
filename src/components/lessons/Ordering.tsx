@@ -67,26 +67,6 @@ class Ordering extends React.Component<any, any> {
     };
   }
 
-  audio = new Audio(
-    "http://dight310.byu.edu/media/audio/FreeLoops.com/1/1/Beep%20Sound.wav-21324-Free-Loops.com.mp3"
-  );
-
-  componentDidMount() {
-    this.audio.addEventListener("ended", () => this.setState({ play: false }));
-  }
-
-  componentWillUnmount() {
-    this.audio.removeEventListener("ended", () =>
-      this.setState({ play: false })
-    );
-  }
-
-  togglePlay = () => {
-    this.setState({ play: !this.state.play }, () => {
-      this.state.play ? this.audio.play() : this.audio.pause();
-    });
-  };
-
   onDragEnd = result => {
     if (!result.destination) {
       return;
@@ -112,17 +92,23 @@ class Ordering extends React.Component<any, any> {
   };
 
   render() {
+    const { items, finished } = this.state;
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
         <Droppable droppableId="droppable" direction="horizontal">
           {(provided, snapshot) => (
             <div
               ref={provided.innerRef}
-              style={getListStyle(this.state.finished)}
+              style={getListStyle(finished)}
               {...provided.droppableProps}
             >
-              {this.state.items.map((item, index) => (
-                <Draggable key={item.id} draggableId={item.id} index={index}>
+              {items.map((item, index) => (
+                <Draggable
+                  key={item.id}
+                  draggableId={item.id}
+                  index={index}
+                  isDragDisabled={finished}
+                >
                   {(provided, snapshot) => (
                     <div
                       ref={provided.innerRef}

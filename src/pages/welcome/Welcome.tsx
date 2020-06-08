@@ -11,6 +11,16 @@ const items = [
   { id: "4", content: "it?" }
 ];
 
+const items2 = [
+  { id: "1", content: "What" },
+  { id: "2", content: "is" },
+  { id: "3", content: "the" },
+  { id: "4", content: "problem" },
+  { id: "5", content: "of" },
+  { id: "6", content: "acting" },
+  { id: "7", content: "like this?" }
+];
+
 const getItems = count =>
   Array.from({ length: count }, (v, k) => k).map(k => ({
     id: `item-${k}`,
@@ -25,8 +35,12 @@ class Welcome extends React.Component<any, any> {
   render() {
     return (
       <div>
-        Welcome to Home works Platform
+        DEMO Ordering Lesson
+        <br />
+        <br />
         <OrderingLesson items={items} />
+        <br />
+        <OrderingLesson items={items2} />
       </div>
     );
   }
