@@ -1,6 +1,10 @@
 import React from "react";
 
-import { OrderingLesson, MissingWordsLesson } from "components/index";
+import {
+  OrderingLesson,
+  MissingWordsLesson,
+  TrueOrFalseLesson
+} from "components/index";
 
 import "./Welcome.scss";
 
@@ -32,6 +36,16 @@ const sentence2 = {
   "*": "How"
 };
 
+const question = {
+  content: "London is capital of Great Britain",
+  answer: true
+};
+
+const question2 = {
+  content: "WW|| started on 1941",
+  answer: false
+};
+
 const getItems = count =>
   Array.from({ length: count }, (v, k) => k).map(k => ({
     id: `item-${k}`,
@@ -60,6 +74,15 @@ class Welcome extends React.Component<any, any> {
         <MissingWordsLesson sentence={sentence} />
         <br />
         <MissingWordsLesson sentence={sentence2} />
+        <br />
+        <br />
+        DEMO True or False Lesson
+        <br />
+        <br />
+        <TrueOrFalseLesson question={question} />
+        <br />
+        <br />
+        <TrueOrFalseLesson question={question2} />
       </div>
     );
   }

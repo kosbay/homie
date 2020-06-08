@@ -12,6 +12,7 @@ import Draggable from "./drag-n-drop/Draggable";
 import Droppable from "./drag-n-drop/Droppable";
 import OrderingLesson from "./lessons/Ordering";
 import MissingWordsLesson from "./lessons/MissingWords";
+import TrueOrFalseLesson from "./lessons/TrueOrFalse";
 
 export {
   Button,
@@ -27,5 +28,6 @@ export {
   Draggable,
   Droppable,
   OrderingLesson,
-  MissingWordsLesson
+  MissingWordsLesson,
+  TrueOrFalseLesson
 };

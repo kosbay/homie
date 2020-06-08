@@ -1,0 +1,37 @@
+@import "../../styles/_mixins.scss";
+@import "../../styles/_colors.scss";
+
+.torf-container {
+  background-color: grey;
+  border-radius: 4px;
+  display: flex;
+  padding: 8px;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .variants-container {
+    .variant {
+      background-color: $white;
+      color: black;
+      border-radius: 4px;
+      padding: 0px 8px;
+      cursor: pointer;
+      margin-right: 8px;
+
+      &.correct {
+        background-color: lightgreen;
+        transition: ease-in-out 0.5s;
+      }
+
+      &.notCorrect {
+        text-decoration: line-through;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}
