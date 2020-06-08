@@ -1,8 +1,9 @@
 import React from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
+import { wrongAnswerSound, rightAnswerSound } from "../../helpers/sound";
+
 import "./Ordering.scss";
-import { finished } from "stream";
 
 const toStringIds = items => {
   return items.map(({ id }) => id).toString();
@@ -13,13 +14,10 @@ const shuffle = array => {
     temporaryValue,
     randomIndex;
 
-  // While there remain elements to shuffle...
   while (0 !== currentIndex) {
-    // Pick a remaining element...
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex -= 1;
 
-    // And swap it with the current element.
     temporaryValue = array[currentIndex];
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
@@ -28,7 +26,6 @@ const shuffle = array => {
   return array;
 };
 
-// a little function to help us with reordering the result
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
   const [removed] = result.splice(startIndex, 1);
@@ -40,20 +37,18 @@ const reorder = (list, startIndex, endIndex) => {
 const grid = 4;
 
 const getItemStyle = (isDragging, draggableStyle) => ({
-  // some basic styles to make the items look a bit nicer
   userSelect: "none",
   padding: `${grid}px ${grid * 2}px`,
   margin: `0 ${grid}px 0 0`,
   borderRadius: "4px",
 
-  // change background colour if dragging
   background: isDragging ? "lightgreen" : "grey",
 
-  // styles we need to apply on draggables
   ...draggableStyle
 });
 
 const getListStyle = finished => ({
+  transition: "ease-in-out 1s",
   background: finished ? "lightgreen" : "lightgrey",
   borderRadius: "4px",
   display: "flex",
@@ -67,12 +62,32 @@ class Ordering extends React.Component<any, any> {
     this.state = {
       answers: toStringIds(props.items),
       items: shuffle(props.items),
-      finished: false
+      finished: false,
+      play: false
     };
   }
 
+  audio = new Audio(
+    "http://dight310.byu.edu/media/audio/FreeLoops.com/1/1/Beep%20Sound.wav-21324-Free-Loops.com.mp3"
+  );
+
+  componentDidMount() {
+    this.audio.addEventListener("ended", () => this.setState({ play: false }));
+  }
+
+  componentWillUnmount() {
+    this.audio.removeEventListener("ended", () =>
+      this.setState({ play: false })
+    );
+  }
+
+  togglePlay = () => {
+    this.setState({ play: !this.state.play }, () => {
+      this.state.play ? this.audio.play() : this.audio.pause();
+    });
+  };
+
   onDragEnd = result => {
-    // dropped outside the list
     if (!result.destination) {
       return;
     }
@@ -91,6 +106,8 @@ class Ordering extends React.Component<any, any> {
       this.setState({
         finished: true
       });
+
+      rightAnswerSound();
     }
   };
 
