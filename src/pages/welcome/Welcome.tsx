@@ -3,7 +3,8 @@ import React from "react";
 import {
   OrderingLesson,
   MissingWordsLesson,
-  TrueOrFalseLesson
+  TrueOrFalseLesson,
+  SelectingLesson
 } from "components/index";
 
 import "./Welcome.scss";
@@ -46,11 +47,18 @@ const question2 = {
   answer: false
 };
 
-const getItems = count =>
-  Array.from({ length: count }, (v, k) => k).map(k => ({
-    id: `item-${k}`,
-    content: `item ${k}`
-  }));
+const selecting = {
+  content: "What * your name?",
+  "*": {
+    options: [
+      { value: "chocolate", label: "Chocolate" },
+      { value: "strawberry", label: "Strawberry" },
+      { value: "vanilla", label: "Vanilla" }
+    ],
+    vars: ["is", "are", "it"],
+    answer: "chocolate"
+  }
+};
 
 class Welcome extends React.Component<any, any> {
   constructor(props) {
@@ -82,6 +90,12 @@ class Welcome extends React.Component<any, any> {
         <TrueOrFalseLesson question={question} />
         <br />
         <TrueOrFalseLesson question={question2} />
+        <br />
+        <br />
+        DEMO True or False Lesson
+        <br />
+        <br />
+        <SelectingLesson sentence={selecting} />
       </div>
     );
   }

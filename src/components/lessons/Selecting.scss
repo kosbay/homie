@@ -1,0 +1,15 @@
+@import "../../styles/_mixins.scss";
+@import "../../styles/_colors.scss";
+
+.selecting-container {
+  transition: ease-in-out 1s;
+  background-color: grey;
+  border-radius: 4px;
+  display: flex;
+  padding: 4px;
+  align-items: center;
+
+  .sentence-word {
+    margin: 0 6px;
+  }
+}

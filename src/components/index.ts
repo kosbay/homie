@@ -4,7 +4,8 @@ import PageTemplate from "./page-template/PageTemplate";
 import Loader from "./loader/Loader";
 import LoginLoader from "./loader/LoginLoader";
 import OfflineWidget from "./offline-widget/OfflineWidget";
-import Input from "./input/Input";
+import Input from "./inputs/Input";
+import SelectInput from "./inputs/Select";
 import AdditionalBudget from "./additional-budget/AdditionalBudget";
 import Cards from "./cards/index";
 import Header from "./header/Header";
@@ -13,6 +14,7 @@ import Droppable from "./drag-n-drop/Droppable";
 import OrderingLesson from "./lessons/Ordering";
 import MissingWordsLesson from "./lessons/MissingWords";
 import TrueOrFalseLesson from "./lessons/TrueOrFalse";
+import SelectingLesson from "./lessons/Selecting";
 
 export {
   Button,
@@ -29,5 +31,7 @@ export {
   Droppable,
   OrderingLesson,
   MissingWordsLesson,
-  TrueOrFalseLesson
+  TrueOrFalseLesson,
+  SelectInput,
+  SelectingLesson
 };

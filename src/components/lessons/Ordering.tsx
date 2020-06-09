@@ -69,6 +69,7 @@ class Ordering extends React.Component<any, any> {
 
   render() {
     const { items, finished } = this.state;
+
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
         <Droppable droppableId="droppable" direction="horizontal">

@@ -32,7 +32,7 @@ class TrueOrFalse extends React.Component<any, any> {
   render() {
     const { question } = this.props;
     const { answerTrue, answerFalse } = this.state;
-    console.log("correct", answerTrue, answerFalse);
+
     return (
       <div className="torf-container">
         {question.content}
