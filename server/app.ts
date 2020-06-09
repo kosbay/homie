@@ -9,12 +9,6 @@ import passport from "passport";
 import * as Sentry from "@sentry/node";
 import connectMongo from "connect-mongo";
 
-import config from "./config/connections";
-import routes from "./routes";
-import db from "./dbConnect";
-import "./config/passport";
-import { reportNotificationScheduler } from "./helpers/schedule";
-
 const environment = process.env.NODE_ENV;
 const MongoStore = connectMongo(session);
 
@@ -25,9 +19,6 @@ if (environment !== "development") {
   });
 }
 
-db.on("error", console.error.bind(console, "MongoDB connection error:"));
-db.once("open", () => console.log("MongoDB connection successful"));
-
 const app = express();
 
 app.use(
@@ -35,7 +26,6 @@ app.use(
     secret: "keyboard cat",
     resave: false,
     saveUninitialized: true,
-    store: new MongoStore({ mongooseConnection: db }),
     cookie: { secure: true }
   })
 );
@@ -46,13 +36,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(passport.initialize());
 
-app.use("/api", routes);
-
-reportNotificationScheduler();
-
-app.listen(config.sc_platform_backend_port, () => {
+app.listen(5000, () => {
   console.info(`Server running on ${environment} mode.`);
-  console.log(`Server is running on Port: ${config.sc_platform_backend_port}`);
+  console.log(`Server is running on Port: 5000`);
 });
 
 app.use((err, req, res, next) => {

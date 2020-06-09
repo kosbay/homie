@@ -16,16 +16,18 @@ class TrueOrFalse extends React.Component<any, any> {
   }
 
   handleAnswer = value => {
-    if (value === this.props.question.answer) {
-      let arg = value ? "answerTrue" : "answerFalse";
-      this.setState({
-        correct: true,
-        [arg]: true
-      });
+    if (!this.state.correct) {
+      if (value === this.props.question.answer) {
+        let arg = value ? "answerTrue" : "answerFalse";
+        this.setState({
+          correct: true,
+          [arg]: true
+        });
 
-      rightAnswerSound();
-    } else {
-      wrongAnswerSound();
+        rightAnswerSound();
+      } else {
+        wrongAnswerSound();
+      }
     }
   };
 
