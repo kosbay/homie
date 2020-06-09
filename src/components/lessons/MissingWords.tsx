@@ -42,37 +42,37 @@ class MissingWords extends React.Component<any, any> {
     const { sentence } = this.props;
     const { word1, word2, finished1, finished2 } = this.state;
 
-    const renderSentence = sentence.content.split(" ").map(word => {
+    const renderSentence = sentence.content.split(" ").map((word, index) => {
       let result: any = null;
       if (word === "*") {
-        result = (
+        result = finished1 ? (
+          <div key={index} className="sentence-finished">
+            {sentence["*"]}
+          </div>
+        ) : (
           <Input
             size="3"
             name="*"
-            className={classnames(
-              { finished: finished1 },
-              "missing-word-input"
-            )}
+            className={classnames("missing-word-input")}
             value={word1}
             key={word}
             onChange={e => this.handleInputChange(e, "word1")}
             onKeyDown={e => this.handleCheckInput(e, "*")}
-            readOnly={finished1}
           />
         );
       } else if (word === "#") {
-        result = (
+        result = finished2 ? (
+          <div key={index} className="sentence-finished">
+            {sentence["#"]}
+          </div>
+        ) : (
           <Input
             name="#"
-            className={classnames(
-              { finished: finished2 },
-              "missing-word-input"
-            )}
+            className={classnames("missing-word-input")}
             value={word2}
             key={word}
             onChange={e => this.handleInputChange(e, "word2")}
             onKeyDown={e => this.handleCheckInput(e, "#")}
-            readOnly={finished2}
           />
         );
       } else {

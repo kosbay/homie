@@ -12,4 +12,12 @@
   .sentence-word {
     margin: 0 6px;
   }
+
+  .sentence-finished {
+    background-color: lightgreen;
+    transition: background-color 0.5s linear;
+    border-radius: 4px;
+    padding: 8px 8px;
+    color: black;
+  }
 }

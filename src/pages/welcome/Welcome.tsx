@@ -51,12 +51,23 @@ const selecting = {
   content: "What * your name?",
   "*": {
     options: [
-      { value: "chocolate", label: "Chocolate" },
-      { value: "strawberry", label: "Strawberry" },
-      { value: "vanilla", label: "Vanilla" }
+      { value: "is", label: "is" },
+      { value: "are", label: "are" },
+      { value: "it", label: "it" }
     ],
-    vars: ["is", "are", "it"],
-    answer: "chocolate"
+    answer: "is"
+  }
+};
+
+const selecting2 = {
+  content: "* I joke to you?",
+  "*": {
+    options: [
+      { value: "Are", label: "Are" },
+      { value: "Do", label: "Do" },
+      { value: "Am", label: "Am" }
+    ],
+    answer: "Am"
   }
 };
 
@@ -92,10 +103,12 @@ class Welcome extends React.Component<any, any> {
         <TrueOrFalseLesson question={question2} />
         <br />
         <br />
-        DEMO True or False Lesson
+        DEMO Selecting Lesson
         <br />
         <br />
         <SelectingLesson sentence={selecting} />
+        <br />
+        <SelectingLesson sentence={selecting2} />
       </div>
     );
   }

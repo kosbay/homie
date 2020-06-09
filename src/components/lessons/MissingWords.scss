@@ -28,4 +28,13 @@
   .sentence-word {
     margin: 0 4px;
   }
+
+  .sentence-finished {
+    background-color: lightgreen;
+    transition: background-color 0.5s linear;
+    border-radius: 4px;
+    padding: 4px 8px;
+    color: black;
+    margin: 0 8px !important;
+  }
 }

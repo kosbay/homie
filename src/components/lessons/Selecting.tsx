@@ -11,7 +11,6 @@ class Selecting extends React.Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {
-      word: "",
       finished: false
     };
   }
@@ -31,11 +30,16 @@ class Selecting extends React.Component<any, any> {
 
   render() {
     const { sentence } = this.props;
+    const { finished } = this.state;
 
     const renderSentence = sentence.content.split(" ").map((word, index) => {
       let result: any = null;
       if (word === "*") {
-        result = (
+        result = finished ? (
+          <div key={index} className="sentence-finished">
+            {sentence["*"].answer}
+          </div>
+        ) : (
           <SelectInput
             key={index}
             options={sentence["*"].options}
