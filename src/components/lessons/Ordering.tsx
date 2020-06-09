@@ -2,36 +2,12 @@ import React from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 import { wrongAnswerSound, rightAnswerSound } from "../../helpers/sound";
+import { shuffle, reorder } from "../../helpers/utils";
 
 import "./Ordering.scss";
 
 const toStringIds = items => {
   return items.map(({ id }) => id).toString();
-};
-
-const shuffle = array => {
-  let currentIndex = array.length,
-    temporaryValue,
-    randomIndex;
-
-  while (0 !== currentIndex) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-
-  return array;
-};
-
-const reorder = (list, startIndex, endIndex) => {
-  const result = Array.from(list);
-  const [removed] = result.splice(startIndex, 1);
-  result.splice(endIndex, 0, removed);
-
-  return result;
 };
 
 const grid = 4;

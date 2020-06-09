@@ -81,7 +81,6 @@ class Welcome extends React.Component<any, any> {
         <br />
         <TrueOrFalseLesson question={question} />
         <br />
-        <br />
         <TrueOrFalseLesson question={question2} />
       </div>
     );
