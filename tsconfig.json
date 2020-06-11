@@ -7,7 +7,6 @@
     "jsx": "react",
     "lib": ["dom", "es2015", "es2016", "es2017"],
     "moduleResolution": "node",
-    "keyofStringsOnly": true,
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
@@ -23,3 +22,4 @@
   },
   "exclude": ["node_modules", "build", "ts-node-*"]
 }
+

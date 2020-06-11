@@ -1,0 +1,55 @@
+@import "../../styles/_mixins.scss";
+@import "../../styles/_colors.scss";
+
+.torf-create-container {
+  background-color: grey;
+  border-radius: 4px;
+  padding: 8px;
+
+  .torf-block {
+    display: flex;
+
+    .torf-question-container {
+      width: 600px;
+      margin-right: 32px;
+
+      .question-title {
+        display: block;
+      }
+
+      .question-input {
+        margin: 0;
+        margin-top: 12px;
+      }
+    }
+  }
+
+  .torf-answer-container {
+    .answer-title {
+      display: block;
+    }
+
+    .variants-container {
+      font-family: "Montserrat", sans-serif !important;
+      display: block;
+      margin-top: 12px;
+
+      .variant {
+        font-family: "Montserrat", sans-serif !important;
+
+        &.correct {
+          background-color: lightgreen;
+          transition: ease-in-out 0.5s;
+        }
+
+        &.notCorrect {
+          text-decoration: line-through;
+        }
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

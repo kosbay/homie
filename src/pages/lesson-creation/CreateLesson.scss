@@ -1,0 +1,28 @@
+@import "../../styles/_mixins.scss";
+@import "../../styles/_colors.scss";
+
+.create-lesson-first-line {
+  display: flex;
+
+  .lesson-title-container {
+    margin-right: 64px;
+
+    .lesson-title-label {
+      margin-right: 24px;
+    }
+
+    .lesson-title-input {
+      width: 256px;
+      margin: 0 !important;
+    }
+  }
+}
+
+.lesson-desc-container {
+  .lesson-desc-label {
+  }
+
+  .lesson-desc-input {
+    height: 120px;
+  }
+}

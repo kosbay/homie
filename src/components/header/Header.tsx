@@ -29,9 +29,9 @@ const Header = ({}) => (
     <NavLink
       activeClassName="header-active"
       className="header-items"
-      to="/profile"
+      to="/create-lesson"
     >
-      Profile
+      Create Lesson
     </NavLink>
     <NavLink
       activeClassName="header-active"

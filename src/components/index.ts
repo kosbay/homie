@@ -15,6 +15,7 @@ import OrderingLesson from "./lessons/Ordering";
 import MissingWordsLesson from "./lessons/MissingWords";
 import TrueOrFalseLesson from "./lessons/TrueOrFalse";
 import SelectingLesson from "./lessons/Selecting";
+import TrueOrFalseCreation from "./create-exercises/TrueOrFalseCreation";
 
 export {
   Button,
@@ -33,5 +34,6 @@ export {
   MissingWordsLesson,
   TrueOrFalseLesson,
   SelectInput,
-  SelectingLesson
+  SelectingLesson,
+  TrueOrFalseCreation
 };
